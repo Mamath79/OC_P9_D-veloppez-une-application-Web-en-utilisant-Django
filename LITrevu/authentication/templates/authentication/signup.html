@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="signup_form">
+        {% if form.errors %}
+            {{ form.errors }}
+        {% endif %}
+        <form method="post">
+            {{ form.as_p }}
+            {% csrf_token %}
+                <div>
+                    <button type="button" onclick="window.history.back()">Retourner</button>
+                    <button type="submit" >S’inscrire</button>
+                </div>
+        </form>
+    </div>
+{% endblock content %}

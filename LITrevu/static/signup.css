@@ -1,0 +1,55 @@
+/* Styles pour centrer la section du formulaire */
+.signup_form{
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+p {
+    text-align: center;
+}
+
+input {
+    padding: 15px;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.1em;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #61787F;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+button:hover {
+    background-color: #4a5f67;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 20px;
+}
+
+.actions button {
+    padding: 10px 30px;
+    font-size: 1.1em;
+}

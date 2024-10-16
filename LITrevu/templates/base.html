@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LITrevu</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'base_styles.css' %}">
+        <link rel="stylesheet" href="{% static 'login.css' %}">
+        <link rel="stylesheet" href="{% static 'fonts.css' %}">
+        <link rel="stylesheet" href="{% static 'signup.css' %}">
+</head>
+<body>
+    <header>
+        {% if user.is_authenticated %}
+            <div class="spacer"></div>
+        {% endif %}
+        <h1>LITrevue</h1>
+        {% if user.is_authenticated %}
+            <nav>
+                <ul>
+                    <li><a href="#">Flux</a></li>
+                    <li><a href="#">Posts</a></li>
+                    <li><a href="#">Abonnements</a></li>
+                    <li>
+                        <form method="POST" action="{% url 'logout' %}">
+                            {% csrf_token %}
+                            <button type="submit">Se déconnecter</button>
+                        </form>
+                    </li>
+                </ul>
+            </nav>
+        {% endif %}
+    </header> 
+    <main>
+    {% block content %}
+    {% endblock content %}
+    <!-- {%  if user.is_authenticated %}
+        <p>Voulez-vous <a href="{% url 'password_change' %}" title="changer de mot de passe">changer votre mot de passe ?</a></p>
+    {% endif %} -->
+    </main>
+</body>
+</html>
