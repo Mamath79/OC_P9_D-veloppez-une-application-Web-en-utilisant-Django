@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="update_review_container">
+    <h1>Modifier une critique</h1>
+    <h2>Ticket: {{ ticket.title }}</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Soumettre</button>
+    </form>
+</div>
+
+{% endblock %}

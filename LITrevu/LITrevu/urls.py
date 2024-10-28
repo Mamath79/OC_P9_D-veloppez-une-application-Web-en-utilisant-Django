@@ -21,9 +21,16 @@ from django.urls import include, path
 
 import authentication.views
 import blog.views
+from django.conf.urls.static import static
+from django.conf import settings
 
 
 urlpatterns = [
+
+    path("__reload__/", include("django_browser_reload.urls")), # a supprimer en fin de projet
+
+
+
     path('admin/', admin.site.urls),
     path('', LoginView.as_view(
         template_name='authentication/login.html',
@@ -40,6 +47,15 @@ urlpatterns = [
          ),
     path('signup/', authentication.views.signup_page, name='signup'),
     path('home/', blog.views.home, name='home'),
-    path("__reload__/", include("django_browser_reload.urls")),
-
+    path('ticket/create/', blog.views.create_ticket, name='create_ticket'),
+    path('ticket/update/<int:ticket_id>', blog.views.update_ticket, name='update_ticket'),
+    path('ticket/delete/<int:ticket_id>', blog.views.delete_ticket, name='delete_ticket'),
+    path('review/create/<int:ticket_id>', blog.views.create_review, name='create_review'),
+    path('review/update/<int:review_id>', blog.views.update_review, name='update_review'),
+    path('review/delete/<int:review_id>', blog.views.delete_review, name='delete_review'),
+    path('ticket_and_review/create/', blog.views.create_ticket_and_review, name='create_ticket_and_review'),
+    path('user/reviews/', blog.views.user_reviews, name='user_reviews'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

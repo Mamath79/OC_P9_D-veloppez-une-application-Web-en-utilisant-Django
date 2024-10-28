@@ -1,0 +1,70 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+
+}
+h1 {
+    align-self: center;
+    padding: 2%;
+    font-weight: 300;
+    font-size: 1.5em; 
+}
+/* Styles pour les tickets */
+.ticket {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    border: 2px solid #ccc; /* Bordure solide */
+    border-radius: 5px;     /* Coins arrondis */
+    padding: 20px;          /* Espacement intérieur */
+    margin-bottom: 20px;    /* Espacement entre les tickets */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Légère ombre pour effet 3D */
+}
+
+/* Styles pour les reviews */
+.review {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    border: 2px solid #ccc; /* Bordure solide */
+    border-radius: 5px;     /* Coins arrondis */
+    padding: 20px;          /* Espacement intérieur */
+    margin-bottom: 20px;    /* Espacement entre les reviews */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Légère ombre pour effet 3D */
+}
+
+/* Style de base pour tous les boutons */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 25px; /* Espacement entre les boutons */
+    transition: background-color 0.3s ease; /* Effet de transition pour le survol */
+}
+
+/* Bouton "Demander une critique" */
+.btn-request-review {
+    background-color: #61787F; /* Bleu pour le bouton "Demander une critique" */
+}
+
+.btn-request-review:hover {
+    background-color:  #444f52; /* Bleu plus foncé au survol */
+}
+
+/* Bouton "Créer une critique" */
+.btn-create-review {
+    background-color:#61787F; /* Vert pour le bouton "Créer une critique" */
+}
+
+.btn-create-review:hover {
+    background-color:  #444f52; /* Vert plus foncé au survol */
+}

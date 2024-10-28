@@ -5,17 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>LITrevu</title>
         {% load static %}
-        <link rel="stylesheet" href="{% static 'base_styles.css' %}">
-        <link rel="stylesheet" href="{% static 'login.css' %}">
-        <link rel="stylesheet" href="{% static 'fonts.css' %}">
-        <link rel="stylesheet" href="{% static 'signup.css' %}">
+        <link rel="stylesheet" href="{% static 'css/base_styles.css' %}">
+        <link rel="stylesheet" href="{% static 'css/login.css' %}">
+        <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+        <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+        <link rel="stylesheet" href="{% static 'css/create_ticket.css' %}">
+        <link rel="stylesheet" href="{% static 'css/update_ticket.css' %}">
+        <link rel="stylesheet" href="{% static 'css/home.css' %}">
+        <link rel="stylesheet" href="{% static 'css/create_ticket_and_review.css' %}">
+        <link rel="stylesheet" href="{% static 'css/create_review.css' %}">
+
+
 </head>
 <body>
     <header>
         {% if user.is_authenticated %}
             <div class="spacer"></div>
         {% endif %}
-        <h1>LITrevue</h1>
+        <h1>LITrevu</h1>
         {% if user.is_authenticated %}
             <nav>
                 <ul>

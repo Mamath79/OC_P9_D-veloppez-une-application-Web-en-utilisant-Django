@@ -1,0 +1,68 @@
+.create_ticket_and_review_container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin: 0 auto; /* Pour centrer le conteneur */
+    
+    
+}
+
+
+h3 {
+    align-self: center;
+    padding: 2%;
+    font-weight: 300;
+    font-size: 1.4em;
+}
+
+.create_ticket_and_review_container form {
+    display:flex;
+    flex-direction: column;
+    align-items:stretch;
+    width: 100%;
+    gap:10px;
+    border: 2px solid #ccc; /* Bordure solide */
+    border-radius: 5px;     /* Coins arrondis */
+    padding: 20px;          /* Espacement intérieur */
+    margin-bottom: 20px;    /* Espacement entre les tickets */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Légère ombre pour effet 3D */
+
+}
+
+.create_ticket_and_review_container form p{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-right: 2%;
+    padding-left: 2%;
+}
+
+.create_ticket_and_review_container form input#id_tiltle{
+    width: 1200px;
+}
+
+.create_ticket_and_review_container form button{
+    align-self: flex-end;
+    margin: 2%;
+}
+
+
+
+/* Style des champs de texte */
+.create_ticket_and_review_container input[type="text"],
+.create_ticket_and_review_container textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+/* Style pour le champ image */
+.create_ticket_and_review_container input[type="file"] {
+    margin-bottom: 20px;
+    font-size: 16px;
+    width: 100%;
+}

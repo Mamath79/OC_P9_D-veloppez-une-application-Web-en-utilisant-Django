@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="delete_ticket_container">
+        <h3>Supprimer un billet.</h3>
+        <p>Êtes-vous sûr de vouloir supprimer ce ticket ?</p>
+        <p><strong>{{ ticket.title }}</strong></p>
+
+        <form method="post" enctype="multipart/form-data">  
+            {{ form.as_p }}
+            {% csrf_token %}
+            <button type="submit">Supprimer</button>
+            <a href="{% url 'home' %}">Annuler</a>
+        </form>
+    </div>
+    
+{% endblock content %}
