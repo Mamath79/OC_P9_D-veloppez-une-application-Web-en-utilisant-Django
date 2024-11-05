@@ -5,37 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>LITrevu</title>
         {% load static %}
-        <link rel="stylesheet" href="{% static 'css/base_styles.css' %}">
-        <link rel="stylesheet" href="{% static 'css/login.css' %}">
-        <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
-        <link rel="stylesheet" href="{% static 'css/signup.css' %}">
-        <link rel="stylesheet" href="{% static 'css/create_ticket.css' %}">
-        <link rel="stylesheet" href="{% static 'css/update_ticket.css' %}">
-        <link rel="stylesheet" href="{% static 'css/home.css' %}">
-        <link rel="stylesheet" href="{% static 'css/create_ticket_and_review.css' %}">
-        <link rel="stylesheet" href="{% static 'css/create_review.css' %}">
+            <link rel="stylesheet" href="{% static 'css/base_styles.css' %}">
+            <link rel="stylesheet" href="{% static 'css/login.css' %}">
+            <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+            <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+            <link rel="stylesheet" href="{% static 'css/create_ticket.css' %}">
+            <link rel="stylesheet" href="{% static 'css/update_ticket.css' %}">
+            <link rel="stylesheet" href="{% static 'css/flux.css' %}">
+            <link rel="stylesheet" href="{% static 'css/create_ticket_and_review.css' %}">
+            <link rel="stylesheet" href="{% static 'css/create_review.css' %}">
+            <link rel="stylesheet" href="{% static 'css/follow_user.css' %}">
+
 
 
 </head>
 <body>
     <header>
         {% if user.is_authenticated %}
-            <div class="spacer"></div>
+            <p class="left">
+                Bienvenue : {{ user.username }}
+            </p>
         {% endif %}
-        <h1>LITrevu</h1>
+        <h1 class="center">LITrevu</h1>
         {% if user.is_authenticated %}
-            <nav>
-                <ul>
-                    <li><a href="#">Flux</a></li>
-                    <li><a href="#">Posts</a></li>
-                    <li><a href="#">Abonnements</a></li>
-                    <li>
+            <nav class="right">
+                    <p><a href="{% url 'flux' %}">Flux</a></p>
+                    <p><a href="{% url 'user_posts' %}">Posts</a></li>
+                    <p><a href="{% url 'follow_user' %}">Abonnements</a></p>
+                    <p>
                         <form method="POST" action="{% url 'logout' %}">
                             {% csrf_token %}
                             <button type="submit">Se déconnecter</button>
                         </form>
-                    </li>
-                </ul>
+                    </p>
             </nav>
         {% endif %}
     </header> 

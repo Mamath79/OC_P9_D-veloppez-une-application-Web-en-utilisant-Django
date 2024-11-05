@@ -8,6 +8,11 @@ class Ticket(models.Model):
     description =models.TextField(max_length=2048)
     image = models.ImageField(null=True, blank=True)
     time_created = models.DateTimeField(auto_now_add=True)
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='tickets'
+    )
     
     IMAGE_SIZE_MAX = (500, 500)
 
@@ -34,12 +39,12 @@ class Review(models.Model):
     time_created = models.DateTimeField(auto_now_add=True)
 
 
-# class UserFollows(models.Model):
-#     user = models.ForeignKey(to=settings.AUTH_USER_MODEL,
-#                              on_delete=models.CASCADE,
-#                              related_name='following')
-#     followed_user = models.ForeignKey(to=settings.AUTH_USER_MODEL,
-#                                       on_delete=models.CASCADE,
-#                                       related_name='followed_by')
-#     class Meta:
-#         unique_together=('user', 'followed_user', )
+class UserFollows(models.Model):
+    user = models.ForeignKey(to=settings.AUTH_USER_MODEL,
+                             on_delete=models.CASCADE,
+                             related_name='following')
+    followed_user = models.ForeignKey(to=settings.AUTH_USER_MODEL,
+                                      on_delete=models.CASCADE,
+                                      related_name='followed_by')
+    class Meta:
+        unique_together=('user', 'followed_user', )

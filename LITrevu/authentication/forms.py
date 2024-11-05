@@ -11,3 +11,5 @@ class SignupForm(UserCreationForm):
         super(SignupForm, self).__init__(*args, **kwargs)
         for field_name in self.fields:
             self.fields[field_name].help_text = ''  # Supprimer les help_texts
+
+

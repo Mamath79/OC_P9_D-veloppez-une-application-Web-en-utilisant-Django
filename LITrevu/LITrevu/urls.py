@@ -46,7 +46,7 @@ urlpatterns = [
          name='password_change_done'
          ),
     path('signup/', authentication.views.signup_page, name='signup'),
-    path('home/', blog.views.home, name='home'),
+    path('flux/', blog.views.home, name='flux'),
     path('ticket/create/', blog.views.create_ticket, name='create_ticket'),
     path('ticket/update/<int:ticket_id>', blog.views.update_ticket, name='update_ticket'),
     path('ticket/delete/<int:ticket_id>', blog.views.delete_ticket, name='delete_ticket'),
@@ -55,7 +55,9 @@ urlpatterns = [
     path('review/delete/<int:review_id>', blog.views.delete_review, name='delete_review'),
     path('ticket_and_review/create/', blog.views.create_ticket_and_review, name='create_ticket_and_review'),
     path('user/reviews/', blog.views.user_reviews, name='user_reviews'),
+    path('user_posts/', blog.views.user_posts, name='user_posts'),
+    path('follow_user/', blog.views.follow_users, name='follow_user'),
+    path('delete_followed_user/<int:follow_id>', blog.views.delete_followed_user, name='delete_followed_user'),
 ]
-
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

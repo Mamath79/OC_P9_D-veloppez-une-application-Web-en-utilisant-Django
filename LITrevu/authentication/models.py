@@ -11,4 +11,12 @@ class User(AbstractUser):
         (SUBSCRIBER, 'Abonné'),
     )
     
-    role = models.CharField(max_length=30, choices=ROLE_CHOICES)
+    role = models.CharField(max_length=30,
+                            choices=ROLE_CHOICES,
+                            default=CREATOR)
+    follows = models.ManyToManyField(
+        'self',
+        limit_choices_to={'role': CREATOR},
+        symmetrical=False,
+        verbose_name='suit',
+    )

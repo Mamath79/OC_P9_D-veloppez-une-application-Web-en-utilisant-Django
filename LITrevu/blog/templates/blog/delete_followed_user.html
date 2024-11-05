@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="delete_followed_user">
+        <h1>Ne plus suivre cet utilisateur</h1>
+        <p>Êtes-vous sûr de vouloir ne plus suivre cet utilisateur ?</p>
+        <p><strong>{{ followed_user.username }}</strong></p>
+
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">Supprimer</button>
+            <a href="{% url 'follow_user' %}">Annuler</a>
+        </form>
+    </div>
+{% endblock %}

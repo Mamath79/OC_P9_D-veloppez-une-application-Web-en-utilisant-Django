@@ -19,9 +19,11 @@ p {
 }
 
 input {
-    padding: 15px;
-    width: 100%;
-    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    padding: 25px;
+    margin-top: 1%;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1.1em;
@@ -52,4 +54,8 @@ button:hover {
 .actions button {
     padding: 10px 30px;
     font-size: 1.1em;
+}
+
+.label {
+    margin: 200px;
 }

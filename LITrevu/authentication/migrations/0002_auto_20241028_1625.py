@@ -2,6 +2,48 @@
 
 from django.db import migrations
 
+def create_groups(apps, schema_migration):
+    User = apps.get_model('authentication', 'User')
+    Group = apps.get_model ('auth', 'Group')
+    Permission = apps.get_model('auth', 'Permission' )
+
+    add_ticket = Permission.objects.get(codename='add_ticket')
+    view_ticket = Permission.objects.get(codename='view_ticket')
+    change_ticket = Permission.objects.get(codename='change_ticket')
+    delete_ticket = Permission.objects.get(codename='delete_ticket')
+    add_review = Permission.objects.get(codename='add_review')
+    view_review = Permission.objects.get(codename='view_review')
+    change_review = Permission.objects.get(codename='change_review')
+    delete_review = Permission.objects.get(codename='delete_review')
+
+    creator_permissions = [
+        add_ticket,
+        view_ticket,
+        change_ticket,
+        delete_ticket,
+        add_review,
+        view_review,
+        change_review,
+        delete_review,
+    ]
+
+    creators = Group(name='creators')
+    creators.save()
+
+    creators.permissions.set(creator_permissions)
+
+    subscribers = Group(name='subscribers')
+    subscribers.save()
+    subscribers.permissions.add(view_ticket)
+
+    for user in User.objects.all():
+        if user.role == 'CREATOR':
+            creators.user_set.add(user)
+        if user.role == 'SUBSCRIBER':
+            subscribers.user_set.add(user)
+
+
+
 
 class Migration(migrations.Migration):
 
@@ -10,4 +52,6 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
+        migrations.RunPython(create_groups)
     ]
+

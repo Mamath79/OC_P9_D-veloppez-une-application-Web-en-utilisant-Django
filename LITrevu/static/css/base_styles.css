@@ -29,47 +29,43 @@ header {
     height: 80px;
 }
 
-header .spacer {
-    flex-grow: 1;
-    width: 300px;
+header .left,
+header .center,
+header .right {
+    flex: 1;
+}
+
+header .center {
+    text-align: center;
+}
+
+header .left {
+    display: flex;
+    justify-content: flex-start;
 }
 
 header h1 {
-    flex: 1;
-    text-align: center;
     font-weight: 600;
     font-size: 1.7em;
 }
 
-header nav {
-    flex-grow: 1;
+header .right {
     display: flex;
+    gap: 15px;
     justify-content: flex-end;
-}
-
-header nav ul {
-    font-size: 1em;
-    list-style: none;
-    display: flex;
-    gap: 10px;
     align-items: center;
 }
 
-header nav ul li {
+header .right p {
     margin: 0;
 }
 
-header nav ul li a, header nav ul li button {
-    text-decoration: none;
+header .right p a,
+header .right form button {
     color: #fff;
+    text-decoration: none;
     background-color: transparent;
     border: none;
     cursor: pointer;
-}
-
-header button {
     font-size: 1em;
-    padding: 0px;
 }
-
-

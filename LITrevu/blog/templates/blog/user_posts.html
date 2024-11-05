@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="user-posts">
+        <h1>Mes Publications</h1>
+        <div class="create-buttons">
+            <a href="{% url 'create_ticket' %}" class="btn">Demander une critique</a>
+            <a href="{% url 'create_ticket_and_review' %}" class="btn">Créer une critique</a>
+        </div>
+        
+        {% for item in combined_list %}
+            {% if item.item_type == 'ticket' %}
+            <div class="ticket">
+                <h3>{{ item.title }}</h3>
+                <p>Date : {{ item.time_created|date:"d/m/Y H:i" }}</p>
+                {% if item.image %}
+                    <img src="{{ item.image.url }}" alt="Image du ticket">
+                {% endif %}
+                <p>Description : {{ item.description }}</p>
+                <div class="ticket-actions">
+                    <a href="{% url 'update_ticket' item.id %}" class="btn">Modifier</a>
+                    <a href="{% url 'delete_ticket' item.id %}" class="btn danger">Supprimer</a>
+                </div>
+            </div>
+            
+            {% elif item.item_type == 'review' %}
+            <div class="review">
+                <h2>{{ item.headline }}</h2>
+                <p>Date de création : {{ item.time_created|date:"H:i d/m/Y" }}</p>
+                <p>{{ item.body }}</p>
+                <p>Note: {{ item.rating }}/5</p>
+                <div class="review-actions">
+                    <a href="{% url 'update_review' item.id %}" class="btn">Modifier</a>
+                    <a href="{% url 'delete_review' item.id %}" class="btn danger">Supprimer</a>
+                </div>
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock %}
