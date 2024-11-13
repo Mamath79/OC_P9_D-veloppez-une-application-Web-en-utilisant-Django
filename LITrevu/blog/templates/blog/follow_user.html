@@ -29,7 +29,7 @@
         <h2>Abonnés</h2>
         <ul>
         {% for follow in user_followers %}
-            <p>{{ follow.followed_user.username }}</p>
+            <p>{{ follow.user.username }}</p>
         {% empty %}
             <p>Vous n'êtes suivis par personne.</p>
         {% endfor %}

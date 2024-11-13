@@ -54,6 +54,7 @@ urlpatterns = [
     path('review/update/<int:review_id>', blog.views.update_review, name='update_review'),
     path('review/delete/<int:review_id>', blog.views.delete_review, name='delete_review'),
     path('ticket_and_review/create/', blog.views.create_ticket_and_review, name='create_ticket_and_review'),
+    path('permission-denied/', blog.views.permission_denied_view, name='permission_denied'),
     path('user/reviews/', blog.views.user_reviews, name='user_reviews'),
     path('user_posts/', blog.views.user_posts, name='user_posts'),
     path('follow_user/', blog.views.follow_users, name='follow_user'),

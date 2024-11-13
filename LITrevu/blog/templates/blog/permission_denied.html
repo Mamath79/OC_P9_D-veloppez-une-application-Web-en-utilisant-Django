@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="permission-denied">
+        <h2>Accès refusé</h2>
+        <p>{{ message }}</p>
+        <a href="{% url 'flux' %}">Retour à l'accueil</a>
+    </div>
+{% endblock %}
+    
