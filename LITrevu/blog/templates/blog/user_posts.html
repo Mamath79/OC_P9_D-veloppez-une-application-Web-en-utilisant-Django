@@ -8,6 +8,9 @@
             <a href="{% url 'create_ticket_and_review' %}" class="btn">Créer une critique</a>
         </div>
         
+        {% if is_empty %}
+            <p>Bienvenue ! Créez votre première publication.</p>
+        {% else %}
         {% for item in combined_list %}
             {% if item.item_type == 'ticket' %}
             <div class="ticket">
@@ -36,5 +39,6 @@
             </div>
             {% endif %}
         {% endfor %}
+    {% endif %}  
     </div>
 {% endblock %}

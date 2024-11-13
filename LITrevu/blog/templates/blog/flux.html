@@ -2,12 +2,14 @@
 
 {% block content %}
     <div class="home">
-        <h1>Page d'accueil</h1>
         <div class="home_review_button">
             <a href="{% url 'create_ticket' %}" class="btn btn-request-review">Demander une critique</a>
             <a href="{% url 'create_ticket_and_review' %}" class="btn btn-create-review">Créer une critique</a>
         </div>
         
+        {% if is_empty %}
+            <p>Bienvenue ! Créez votre premier billet ou abonnez-vous à d'autres utilisateurs pour voir leurs publications.</p>
+        {% else %}
         {% for item in combined_list %}
             {% if item.item_type == 'ticket' %}
             <div class="ticket">
@@ -69,5 +71,6 @@
             </div>
             {% endif %}
         {% endfor %}
+    {% endif %}   
     </div>
 {% endblock %}

@@ -1,0 +1,2 @@
+exclude = migrations,env,static,media,templates,
+max-line-length = 88
