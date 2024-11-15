@@ -23,12 +23,15 @@ def home(request):
         key=lambda instance: instance.time_created,
         reverse=True,
     )
+
     # Ajouter un indicateur si la liste est vide
     is_empty = not combined_list
 
-    # Ajout d'une clé 'type' pour chaque élément dans la liste
     for item in combined_list:
         item.item_type = "ticket" if isinstance(item, Ticket) else "review"
+        if isinstance(item, Review):
+            item.filled_stars = range(item.rating)
+            item.empty_stars = range(5 - item.rating)
 
     return render(
         request,
@@ -197,6 +200,9 @@ def user_posts(request):
 
     for item in combined_list:
         item.item_type = "ticket" if isinstance(item, Ticket) else "review"
+        if isinstance(item, Review):
+            item.filled_stars = range(item.rating)
+            item.empty_stars = range(5 - item.rating)
 
     return render(
         request,

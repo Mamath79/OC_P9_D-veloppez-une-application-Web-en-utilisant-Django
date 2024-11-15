@@ -69,3 +69,82 @@ header .right form button {
     cursor: pointer;
     font-size: 1em;
 }
+
+/* Conteneur principal */
+.delete-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* Hauteur de la page */
+    background-color: #f9f9f9; /* Couleur de fond */
+    padding: 20px;
+}
+
+/* Carte de confirmation */
+.delete-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+.delete-card h1 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #e74c3c; /* Rouge pour attirer l'attention */
+}
+
+.delete-card p {
+    font-size: 1em;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.delete-card .username {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Formulaire */
+.delete-form {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* Bouton supprimer */
+.btn.danger {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.btn.danger:hover {
+    background-color: #c0392b;
+}
+
+/* Bouton annuler */
+.btn.cancel {
+    background-color: #61787F;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn.cancel:hover {
+    background-color: #444f52;
+}

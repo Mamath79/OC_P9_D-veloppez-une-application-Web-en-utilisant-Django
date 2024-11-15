@@ -1,17 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="delete_review_container">
-        <h1>Supprimer une critique</h1>
-        <p>Êtes-vous sûr de vouloir supprimer cette critique ?</p>
-        <p><strong>{{ review.headline }}</strong></p>
+    <div class="delete-container">
+        <div class="delete-card">
+            <h1>Supprimer une critique</h1>
+            <p>Êtes-vous sûr de vouloir supprimer cette critique ?</p>
+            <p class="username"><strong>{{ review.headline }}</strong></p>
 
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Suppimer</button>
-            <a href="{% url 'home' %}">Annuler</a>
-        </form>
+            <form method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn danger">Supprimer</button>
+                <a href="{% url 'flux' %}" class="btn cancel">Annuler</a>
+            </form>
+        </div>
     </div>
-
 {% endblock %}

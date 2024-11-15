@@ -90,25 +90,3 @@ h3 {
     justify-content: flex-start;
     gap: 10px;
 }
-
-.star-option {
-    font-size: 1.5em;
-    color: #FFD700;
-    cursor: pointer;
-}
-
-.star-option input[type="radio"] {
-    display: none;
-}
-
-/* Style pour les étoiles sélectionnées */
-.star-option input[type="radio"]:checked + label,
-.star-option input[type="radio"]:checked + label ~ .star-option {
-    color: #FFA500;
-}
-
-.star-option:hover {
-    color: #FFC107;
-}
-
-

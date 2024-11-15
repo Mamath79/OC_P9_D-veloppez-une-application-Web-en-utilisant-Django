@@ -1,40 +1,44 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="following_form">
-        <h2>Suivre un utilisateur</h2>
-        <form method="post">
-            {{ form.as_p }}
-            {% csrf_token %}
-            <button type="submit">Suivre</button>
-        </form>
-    </div>
-    
-    <div class="followed_users">
-        <h2>Abonnements</h2>
-        <ul>
-        {% for follow in user_followings %}
-            <p>{{ follow.followed_user.username }}</p>
-            <li>
-                {{ follow.followed_user.username }}
-                <a href="{% url 'delete_followed_user' follow.id %}" class="btn-unfollow">Ne plus suivre</a>
-            </li>
-        {% empty %}
-            <p>Vous ne suivez encore personne.</p>
-        {% endfor %}
-        </ul>
-    </div>
+    <div class="follow-users-container">
+        <!-- Formulaire pour suivre un utilisateur -->
+        <div class="following-form">
+            <h2>Suivre un utilisateur</h2>
+            <form method="post">
+                {{ form.as_p }}
+                {% csrf_token %}
+                <button type="submit" class="btn">Suivre</button>
+            </form>
+        </div>
 
-    <div class="followers">
-        <h2>Abonnés</h2>
-        <ul>
-        {% for follow in user_followers %}
-            <p>{{ follow.user.username }}</p>
-        {% empty %}
-            <p>Vous n'êtes suivis par personne.</p>
-        {% endfor %}
-        </ul>
+        <!-- Liste des abonnements -->
+        <div class="followed-users">
+            <h2>Abonnements</h2>
+            <ul>
+                {% for follow in user_followings %}
+                    <li>
+                        <span class="username">{{ follow.followed_user.username }}</span>
+                        <a href="{% url 'delete_followed_user' follow.id %}" class="btn-unfollow">Ne plus suivre</a>
+                    </li>
+                {% empty %}
+                    <p>Vous ne suivez encore personne.</p>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <!-- Liste des abonnés -->
+        <div class="followers">
+            <h2>Abonnés</h2>
+            <ul>
+                {% for follow in user_followers %}
+                    <li>
+                        <span class="username">{{ follow.user.username }}</span>
+                    </li>
+                {% empty %}
+                    <p>Vous n'êtes suivis par personne.</p>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
-    
 {% endblock %}
-    

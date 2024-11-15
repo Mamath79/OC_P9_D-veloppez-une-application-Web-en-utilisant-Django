@@ -1,4 +1,5 @@
-.home, .follow_users {
+.home,
+.follow-users-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,19 +15,30 @@ h1 {
 /* Styles pour les tickets dans flux et post */
 .ticket,
 .associated-ticket {
-    transform: scale(0.8);
-    transform-origin: center;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    width: 60%;
     border: 2px solid #ccc; /* Bordure solide */
     border-radius: 5px;     /* Coins arrondis */
     padding: 5px;          /* Espacement intérieur */
     margin-bottom: 20px;    /* Espacement entre les tickets */
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Légère ombre pour effet 3D */
+
+}
+
+.ticket {
+    transform: scale(0.8);
+    transform-origin: center;
+    width: 80%;
     background-color: #f9f9f9;
+}
+.associated-ticket {
+    transform: scale(0.9);
+    transform-origin: center;
+    width: 100%;
+    background-color: #e3e2e2;
+
 }
 .author_and_date {
     display: flex;
@@ -65,7 +77,7 @@ h1 {
 .review {
     transform: scale(0.8);
     transform-origin: center;
-    width: 60%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -75,12 +87,62 @@ h1 {
     padding: 20px;          /* Espacement intérieur */
     margin-bottom: 20px;    /* Espacement entre les reviews */
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Légère ombre pour effet 3D */
+    background-color: #f9f9f9;
+}
+.review-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
 }
 
-.associated-ticket {
-    transform: scale(0.7);
-    transform-origin: center;
+.review-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
 }
+
+.review-date {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.review-content {
+    margin-bottom: 12px;
+}
+
+.review-body {
+    font-size: 1em;
+    line-height: 1.5;
+    color: #555;
+}
+
+.review-rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.review-rating-label {
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+.review-stars {
+    display: flex;
+}
+
+.review-stars .star {
+    font-size: 20px;
+    color: #ddd; /* Couleur pour les étoiles non remplies */
+}
+
+.review-stars .star.filled {
+    color: #FFD700; /* Couleur pour les étoiles remplies */
+}
+
+
 /* Style de base pour tous les boutons */
 .btn {
     display: inline-block;

@@ -41,10 +41,24 @@
             {% elif item.item_type == 'review' %}
             <div class="review">
                 <!-- Informations de la review -->
-                <h2>{{ item.headline }}</h2>
-                <p>Date de création : {{ item.time_created|date:"H:i d/m/Y" }}</p>
-                <p>{{ item.body }}</p>
-                <p>Note: {{ item.rating }}/5</p>
+                <div class="review-header">
+                    <p class="review-date">Créé le : {{ item.time_created|date:"H:i d/m/Y" }}</p>
+                    <h2 class="review-title">{{ item.headline }}</h2>
+                </div>
+                <div class="review-content">
+                    <p class="review-body">{{ item.body }}</p>
+                </div>
+                <div class="review-rating">
+                    <p class="review-rating-label">Note :</p>
+                    <div class="review-stars">
+                        {% for _ in item.filled_stars %}
+                            <span class="star filled">★</span>
+                        {% endfor %}
+                        {% for _ in item.empty_stars %}
+                            <span class="star">★</span>
+                        {% endfor %}
+                    </div>
+                </div>
 
                 <!-- Informations du ticket associé -->
                 <div class="associated-ticket">
