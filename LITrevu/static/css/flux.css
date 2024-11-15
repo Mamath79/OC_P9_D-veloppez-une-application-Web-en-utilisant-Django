@@ -1,5 +1,6 @@
 .home,
-.follow-users-container {
+.follow-users-container,
+.update-review-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -218,4 +219,146 @@ h1 {
 
 .button:hover {
     background-color: #45a049;
+}
+
+.permission-denied-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px;
+    margin: 20px auto;
+    width: 60%;
+    border: 2px solid #ccc; /* Bordure pour délimiter la section */
+    border-radius: 10px;    /* Coins arrondis */
+    background-color: #f9f9f9; /* Couleur de fond douce */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+.permission-denied-title {
+    font-size: 2em;
+    color: #d9534f; /* Couleur rouge pour signaler une erreur */
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.permission-denied-message {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.permission-denied-container .btn {
+    background-color: #61787F;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.permission-denied-container .btn:hover {
+    background-color: #444f52;
+}
+
+/* Container principal */
+.update-review-container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Informations sur le ticket */
+.ticket-info {
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 15px;
+}
+
+.ticket-info h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+}
+
+.ticket-info p {
+    font-size: 1em;
+    color: #555;
+}
+
+.ticket-info img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+/* Formulaire de mise à jour */
+.update-review-form .form-group {
+    margin-bottom: 15px;
+}
+
+.update-review-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #333;
+}
+
+.update-review-form input,
+.update-review-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.update-review-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Boutons */
+.btn-submit {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    background-color: #61787F;
+    text-decoration: none;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #444f52;
+}
+
+.btn-cancel {
+    margin-left: 10px;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #61787F;
+    background-color: #f9f9f9;
+    text-decoration: none;
+    font-size: 1em;
+    border: 2px solid #61787F;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-cancel:hover {
+    color: white;
+    background-color: #61787F;
 }

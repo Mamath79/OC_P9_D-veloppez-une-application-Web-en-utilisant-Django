@@ -1,14 +1,29 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="update_review_container">
+<div class="update-review-container">
     <h1>Modifier une critique</h1>
-    <h2>Ticket: {{ ticket.title }}</h2>
-    <form method="post">
+    <div class="ticket-info">
+        <h2>Ticket : {{ ticket.title }}</h2>
+        <p>Description : {{ ticket.description }}</p>
+        {% if ticket.image %}
+        <img src="{{ ticket.image.url }}" alt="Image du ticket">
+        {% endif %}
+    </div>
+    <form method="post" class="update-review-form">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Soumettre</button>
+        <div class="form-group">
+            {{ form.non_field_errors }}
+            {{ form.headline.label_tag }} {{ form.headline }}
+        </div>
+        <div class="form-group">
+            {{ form.body.label_tag }} {{ form.body }}
+        </div>
+        <div class="form-group">
+            {{ form.rating.label_tag }} {{ form.rating }}
+        </div>
+        <button type="submit" class="btn-submit">Enregistrer les modifications</button>
+        <a href="{% url 'flux' %}" class="btn-cancel">Annuler</a>
     </form>
 </div>
-
 {% endblock %}
