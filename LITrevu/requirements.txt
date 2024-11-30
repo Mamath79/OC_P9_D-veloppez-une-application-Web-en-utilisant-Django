@@ -2,14 +2,14 @@ asgiref==3.8.1
 beautifulsoup4==4.12.3
 black==24.10.0
 bs4==0.0.2
-certifi==2023.11.17
+certifi==2024.7.4
 charset-normalizer==3.3.2
 click==8.1.7
 Django==5.1.1
 django-browser-reload==1.16.0
 flake8==7.1.1
 fpdf==1.7.2
-idna==3.6
+idna==3.7
 mccabe==0.7.0
 mypy-extensions==1.0.0
 packaging==24.2
@@ -18,8 +18,8 @@ pillow==11.0.0
 platformdirs==4.3.6
 pycodestyle==2.12.1
 pyflakes==3.2.0
-requests==2.31.0
+requests==2.32.2
 soupsieve==2.5
 sqlparse==0.5.1
 tqdm==4.66.5
-urllib3==2.1.0
+urllib3==2.2.2
